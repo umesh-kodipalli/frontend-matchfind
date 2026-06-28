@@ -1,0 +1,633 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/* ================================
+   COLORS
+================================ */
+
+:root{
+
+--bg1:#2b0b3f;
+--bg2:#5d1036;
+--bg3:#ff5d8f;
+
+--glass:rgba(255,255,255,.08);
+--glassBorder:rgba(255,255,255,.15);
+
+--white:#ffffff;
+--text:#ffe8f2;
+--light:#ffd6e6;
+
+--pink:#ff4f81;
+--rose:#ff7aa2;
+--red:#ff1744;
+
+--success:#59ffa8;
+--error:#ff8e8e;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html,
+body,
+#root{
+
+width:100%;
+height:100%;
+
+}
+
+body{
+
+font-family:Poppins,sans-serif;
+
+overflow:hidden;
+
+color:var(--white);
+
+overflow: auto;
+
+
+background:
+radial-gradient(circle at 20% 20%,rgba(255,255,255,.12),transparent 20%),
+radial-gradient(circle at 80% 10%,rgba(255,105,180,.18),transparent 25%),
+radial-gradient(circle at 70% 80%,rgba(255,20,147,.18),transparent 25%),
+linear-gradient(
+135deg,
+var(--bg1),
+var(--bg2),
+var(--bg3)
+);
+
+}
+
+/* ================================
+   APP
+================================ */
+
+.app{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:30px;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+/* ================================
+   FLOATING HEARTS
+================================ */
+
+body::before{
+
+content:"❤️ 💕 💖 💘 💗 💞 💓 💝";
+
+position:fixed;
+
+left:-10%;
+
+top:-10%;
+
+width:120%;
+
+font-size:42px;
+
+letter-spacing:55px;
+
+opacity:.10;
+
+pointer-events:none;
+
+animation:hearts 22s linear infinite;
+
+}
+
+@keyframes hearts{
+
+0%{
+
+transform:translateY(-150px);
+
+}
+
+100%{
+
+transform:translateY(120vh);
+
+}
+
+}
+
+/* ================================
+   GLOW
+================================ */
+
+.app::before{
+
+content:"";
+
+position:absolute;
+
+width:650px;
+height:650px;
+
+background:
+
+radial-gradient(
+circle,
+rgba(255,92,147,.28),
+transparent 70%
+);
+
+filter:blur(30px);
+
+animation:glow 7s ease-in-out infinite alternate;
+
+}
+
+@keyframes glow{
+
+0%{
+
+transform:
+translate(-180px,-80px);
+
+}
+
+100%{
+
+transform:
+translate(180px,80px);
+
+}
+
+}
+
+/* ================================
+   CARD
+================================ */
+
+.card{
+
+position:relative;
+
+width:100%;
+
+max-width:520px;
+
+padding:45px;
+
+border-radius:30px;
+
+background:var(--glass);
+
+backdrop-filter:blur(25px);
+
+-webkit-backdrop-filter:blur(25px);
+
+border:1px solid var(--glassBorder);
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.35),
+
+0 0 40px rgba(255,79,129,.25);
+
+animation:fadeUp .8s ease;
+
+overflow:hidden;
+
+}
+
+/* Animated Border */
+
+.card::before {
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    pointer-events:none;
+
+    border-radius:30px;
+
+}
+
+@keyframes borderMove{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ========================================
+   TITLE
+======================================== */
+
+.title{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:58px;
+
+    text-align:center;
+
+    color:white;
+
+    text-shadow:
+        0 0 10px #ff4f81,
+        0 0 25px #ff4f81;
+
+    margin-bottom:8px;
+
+    animation:titleGlow 2s ease-in-out infinite alternate;
+
+}
+
+@keyframes titleGlow{
+
+    from{
+
+        text-shadow:
+            0 0 10px #ff4f81,
+            0 0 25px #ff4f81;
+
+    }
+
+    to{
+
+        text-shadow:
+            0 0 18px #ff1744,
+            0 0 45px #ff1744;
+
+    }
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:var(--light);
+
+    margin-bottom:35px;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+/* ========================================
+   LABELS
+======================================== */
+
+.label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:white;
+
+}
+
+/* ========================================
+   INPUTS
+======================================== */
+
+.input-field{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border-radius:16px;
+
+    border:2px solid rgba(255,255,255,.12);
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    font-size:15px;
+
+    margin-bottom:22px;
+
+    transition:.35s;
+
+}
+
+.input-field::placeholder{
+
+    color:#ffd0df;
+
+}
+
+.input-field:hover{
+
+    border-color:#ff8ab2;
+
+}
+
+.input-field:focus{
+
+    outline:none;
+
+    border-color:#ff4f81;
+
+    box-shadow:
+        0 0 20px rgba(255,79,129,.55);
+
+}
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.submit-btn{
+
+    width:100%;
+
+    padding:17px;
+
+    border:none;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff4f81,
+            #ff7aa2
+        );
+
+    transition:.35s;
+
+}
+
+.submit-btn:hover{
+
+    transform:
+        translateY(-3px)
+        scale(1.02);
+
+    box-shadow:
+        0 0 30px rgba(255,79,129,.65);
+
+}
+
+.submit-btn:active{
+
+    transform:scale(.98);
+
+}
+
+.submit-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+/* ========================================
+   RESULT CARD
+======================================== */
+
+.result-card{
+
+    margin-top:35px;
+
+    padding:28px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    animation:fadeUp .6s ease;
+
+}
+
+.result-card h2{
+
+    font-size:22px;
+
+    margin-bottom:15px;
+
+}
+
+/* ========================================
+   PERCENTAGE
+======================================== */
+
+.percentage{
+
+    font-size:72px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    text-shadow:
+
+        0 0 20px #ff4f81,
+
+        0 0 40px #ff1744;
+
+}
+
+/* ========================================
+   LOVE BAR
+======================================== */
+
+.progress{
+
+    width:100%;
+
+    height:14px;
+
+    border-radius:999px;
+
+    background:
+
+        rgba(255,255,255,.12);
+
+    overflow:hidden;
+
+    margin:20px 0;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    border-radius:999px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ff4f81,
+            #ff1744
+        );
+
+    transition:
+        width 1.5s ease;
+
+}
+
+/* ========================================
+   MESSAGE
+======================================== */
+
+.message{
+
+    margin-top:12px;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    color:#fff4f8;
+
+}
+
+/* ========================================
+   SUCCESS / ERROR
+======================================== */
+
+.success{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:#1b4d2f;
+
+    color:#82ffb5;
+
+}
+
+.error{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:#5a1b25;
+
+    color:#ffb2b2;
+
+}
+
+.field-error{
+
+    margin-top:-14px;
+
+    margin-bottom:18px;
+
+    color:#ffb2b2;
+
+    font-size:13px;
+
+}
+
+/* ========================================
+   ANIMATION
+======================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media(max-width:640px){
+
+    .card{
+
+        padding:28px;
+
+    }
+
+    .title{
+
+        font-size:42px;
+
+    }
+
+    .percentage{
+
+        font-size:56px;
+
+    }
+
+}
