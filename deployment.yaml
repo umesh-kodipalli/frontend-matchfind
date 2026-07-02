@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myfrontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myfrontend
+  template:
+    metadata:
+      labels:
+        app: myfrontend
+    spec:
+      imagePullSecrets:
+      - name: dockerhub-secret
+      containers:
+      - name: myfrontend
+        image: umeshkodipalli/umeshimages:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myfrontend-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: myfrontend
+  ports:
+  - port: 80
+    targetPort: 80
