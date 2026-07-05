@@ -3,7 +3,10 @@ import axios from "axios";
 // Centralized base URL so it only has to change in one place (e.g. when
 // moving from local dev to a deployed backend). Override it with a
 // VITE_API_BASE_URL env variable if needed.
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+if (!BASE_URL) {
+  throw new Error("VITE_API_BASE_URL is not set");
+}
 
 // A dedicated axios instance keeps headers/timeouts consistent for every
 // request this app makes, and makes it easy to add interceptors later
