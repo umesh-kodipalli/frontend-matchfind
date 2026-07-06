@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
 /* ================================
@@ -8,20 +8,20 @@
 
 :root{
 
---bg1:#2b0b3f;
---bg2:#5d1036;
---bg3:#ff5d8f;
+--bg1:#0b2b3f;
+--bg2:#0f5d5a;
+--bg3:#5dd9ff;
 
 --glass:rgba(255,255,255,.08);
 --glassBorder:rgba(255,255,255,.15);
 
 --white:#ffffff;
---text:#ffe8f2;
---light:#ffd6e6;
+--text:#e8fbff;
+--light:#d6f7ff;
 
---pink:#ff4f81;
---rose:#ff7aa2;
---red:#ff1744;
+--blue:#4fc3ff;
+--teal:#4fe3c1;
+--yellow:#ffd166;
 
 --success:#59ffa8;
 --error:#ff8e8e;
@@ -58,8 +58,8 @@ overflow: auto;
 
 background:
 radial-gradient(circle at 20% 20%,rgba(255,255,255,.12),transparent 20%),
-radial-gradient(circle at 80% 10%,rgba(255,105,180,.18),transparent 25%),
-radial-gradient(circle at 70% 80%,rgba(255,20,147,.18),transparent 25%),
+radial-gradient(circle at 80% 10%,rgba(79,195,255,.18),transparent 25%),
+radial-gradient(circle at 70% 80%,rgba(79,227,193,.18),transparent 25%),
 linear-gradient(
 135deg,
 var(--bg1),
@@ -92,12 +92,12 @@ overflow:hidden;
 }
 
 /* ================================
-   FLOATING HEARTS
+   FLOATING ICONS
 ================================ */
 
 body::before{
 
-content:"❤️ 💕 💖 💘 💗 💞 💓 💝";
+content:"🤝 😄 🎉 ⭐ 🌟 🙌 😁 🎈";
 
 position:fixed;
 
@@ -115,11 +115,11 @@ opacity:.10;
 
 pointer-events:none;
 
-animation:hearts 22s linear infinite;
+animation:icons 22s linear infinite;
 
 }
 
-@keyframes hearts{
+@keyframes icons{
 
 0%{
 
@@ -152,7 +152,7 @@ background:
 
 radial-gradient(
 circle,
-rgba(255,92,147,.28),
+rgba(79,195,255,.28),
 transparent 70%
 );
 
@@ -208,7 +208,7 @@ box-shadow:
 
 0 20px 60px rgba(0,0,0,.35),
 
-0 0 40px rgba(255,79,129,.25);
+0 0 40px rgba(79,195,255,.25);
 
 animation:fadeUp .8s ease;
 
@@ -248,17 +248,19 @@ transform:rotate(360deg);
 
 .title{
 
-    font-family:"Great Vibes",cursive;
+    font-family:"Baloo 2",cursive;
 
-    font-size:58px;
+    font-size:52px;
+
+    font-weight:800;
 
     text-align:center;
 
     color:white;
 
     text-shadow:
-        0 0 10px #ff4f81,
-        0 0 25px #ff4f81;
+        0 0 10px #4fc3ff,
+        0 0 25px #4fc3ff;
 
     margin-bottom:8px;
 
@@ -271,16 +273,16 @@ transform:rotate(360deg);
     from{
 
         text-shadow:
-            0 0 10px #ff4f81,
-            0 0 25px #ff4f81;
+            0 0 10px #4fc3ff,
+            0 0 25px #4fc3ff;
 
     }
 
     to{
 
         text-shadow:
-            0 0 18px #ff1744,
-            0 0 45px #ff1744;
+            0 0 18px #4fe3c1,
+            0 0 45px #4fe3c1;
 
     }
 
@@ -348,13 +350,13 @@ transform:rotate(360deg);
 
 .input-field::placeholder{
 
-    color:#ffd0df;
+    color:#c9f3ff;
 
 }
 
 .input-field:hover{
 
-    border-color:#ff8ab2;
+    border-color:#8adfff;
 
 }
 
@@ -362,10 +364,10 @@ transform:rotate(360deg);
 
     outline:none;
 
-    border-color:#ff4f81;
+    border-color:#4fc3ff;
 
     box-shadow:
-        0 0 20px rgba(255,79,129,.55);
+        0 0 20px rgba(79,195,255,.55);
 
 }
 
@@ -394,8 +396,8 @@ transform:rotate(360deg);
     background:
         linear-gradient(
             90deg,
-            #ff4f81,
-            #ff7aa2
+            #4fc3ff,
+            #4fe3c1
         );
 
     transition:.35s;
@@ -409,7 +411,7 @@ transform:rotate(360deg);
         scale(1.02);
 
     box-shadow:
-        0 0 30px rgba(255,79,129,.65);
+        0 0 30px rgba(79,195,255,.65);
 
 }
 
@@ -473,14 +475,14 @@ transform:rotate(360deg);
 
     text-shadow:
 
-        0 0 20px #ff4f81,
+        0 0 20px #4fc3ff,
 
-        0 0 40px #ff1744;
+        0 0 40px #4fe3c1;
 
 }
 
 /* ========================================
-   LOVE BAR
+   FRIENDSHIP BAR
 ======================================== */
 
 .progress{
@@ -511,8 +513,8 @@ transform:rotate(360deg);
 
         linear-gradient(
             90deg,
-            #ff4f81,
-            #ff1744
+            #4fc3ff,
+            #4fe3c1
         );
 
     transition:
@@ -532,7 +534,7 @@ transform:rotate(360deg);
 
     font-weight:600;
 
-    color:#fff4f8;
+    color:#f4fdff;
 
 }
 
