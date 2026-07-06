@@ -14,7 +14,7 @@ const INITIAL_ERRORS = {
 
 const FIELD_LABELS = {
   person1: "Your Name",
-  person2: "Partner's Name",
+  person2: "Friend's Name",
 };
 
 function validate(values) {
@@ -29,7 +29,7 @@ function validate(values) {
   return errors;
 }
 
-export default function NameForm() {
+export default function FriendMatchForm() {
   const [values, setValues] = useState(INITIAL_FORM);
   const [errors, setErrors] = useState(INITIAL_ERRORS);
 
@@ -90,20 +90,20 @@ export default function NameForm() {
   };
 
   const getMessage = (percentage) => {
-    if (percentage >= 95) return "💍 Soulmates Forever ❤️";
-    if (percentage >= 85) return "💖 Perfect Match";
-    if (percentage >= 70) return "💕 Great Couple";
-    if (percentage >= 50) return "😊 Good Compatibility";
-    return "💔 Better as Friends";
+    if (percentage >= 95) return "🤝 Best Friends Forever 🎉";
+    if (percentage >= 85) return "🌟 Amazing Friendship";
+    if (percentage >= 70) return "😄 Great Buddies";
+    if (percentage >= 50) return "🙂 Good Vibes";
+    return "🤷 Just Acquaintances";
   };
 
   return (
     <div className="card">
 
-      <h1 className="title">❤️ Love Match ❤️</h1>
+      <h1 className="title">🤝 Friend Match 🤝</h1>
 
       <p className="subtitle">
-        ✨ Two Hearts • One Beautiful Connection ✨
+        ✨ Two Friends • One Great Connection ✨
       </p>
 
       {/* ✅ SHOW FORM ONLY WHEN NO RESULT */}
@@ -112,7 +112,7 @@ export default function NameForm() {
 
           <Field
             id="person1"
-            label="💖 Your Name"
+            label="🙋 Your Name"
             value={values.person1}
             placeholder="Enter your name"
             onChange={handleChange("person1")}
@@ -122,9 +122,9 @@ export default function NameForm() {
 
           <Field
             id="person2"
-            label="💕 Partner's Name"
+            label="🧑‍🤝‍🧑 Friend's Name"
             value={values.person2}
-            placeholder="Enter your partner's name"
+            placeholder="Enter your friend's name"
             onChange={handleChange("person2")}
             error={errors.person2}
             disabled={status === "submitting"}
@@ -136,11 +136,11 @@ export default function NameForm() {
             disabled={status === "submitting"}
           >
             {status === "submitting"
-              ? "💘 Finding Your Soulmate..."
+              ? "🔍 Finding Your Match..."
               : (
                 <>
                   <Sparkles size={18} />
-                  <span> ❤️ Find Our Match ❤️ </span>
+                  <span> 🤝 Find Our Match 🤝 </span>
                 </>
               )
             }
@@ -158,7 +158,7 @@ export default function NameForm() {
         <div className="result-card">
 
           <h2>
-            {matchResult.person1} ❤️ {matchResult.person2}
+            {matchResult.person1} 🤝 {matchResult.person2}
           </h2>
 
           <div className="percentage">
@@ -179,7 +179,7 @@ export default function NameForm() {
           </p>
 
           <div style={{ marginTop: "20px", fontSize: "40px" }}>
-            ❤️ 💕 💖 💘 💝
+            🤝 🎉 🌟 😄 🙌
           </div>
           <button
   className="submit-btn"
